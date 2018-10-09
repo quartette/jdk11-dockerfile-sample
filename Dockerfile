@@ -15,8 +15,7 @@ RUN apk --update add tzdata bash sudo && \
 # 実行ユーザーを追加
 RUN adduser -h /home/quartette -D quartette && \
       chown -R quartette:quartette /var/app/quartette && \
-      chown -R quartette:quartette /var/log/app && \
-      echo -e "quartette ALL=(ALL) NOPASSWD: $JAVA_HOME/bin/jstatd\n" >> /etc/sudoers
+      chown -R quartette:quartette /var/log/app
 
 # 成果物をコピー
 USER quartette
